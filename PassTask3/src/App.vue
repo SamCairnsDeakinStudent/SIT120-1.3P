@@ -1,85 +1,32 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+import FooterComponent from './components/FooterComponent.vue';
+import HelloWorld from './components/FooterComponent.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <link rel="stylesheet" href="../src/assets/grid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="content">
+    <div class="nav-container" style="background-color:black; padding-top:2vw; padding-bottom: 2vw; ">
+      <div class="links-container" style="text-align:center;">
+        <RouterLink class="nav-link" to="/" style="color: white; margin-right: 2vw; font-family: Arial, Helvetica, sans-serif;">Home</RouterLink>
+        <RouterLink class="nav-link" to="/about" style="color: white; margin-right: 2vw; font-family: Arial, Helvetica, sans-serif;">About</RouterLink>
+        <RouterLink class="nav-link" to="/contact" style="color: white; font-family: Arial, Helvetica, sans-serif;">Contact</RouterLink>
+      </div>
     </div>
-  </header>
 
-  <RouterView />
+    <div class="page-container">
+      <div class="content-wrapper">
+        <RouterView />
+      </div>
+    </div>
+    <footer class="amazing-footer" style="background-color: aquamarine;">
+      <FooterComponent/>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
